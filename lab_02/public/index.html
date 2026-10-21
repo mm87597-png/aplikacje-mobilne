@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Powiadomienia</title>
+    <link rel="manifest" href="manifest.json" />
+    <script src="notification.js" defer></script>
+  </head>
+  <body>
+    <h1>Powiadomienia</h1>
+
+    <p>Stan zgody: <span id="permission"></span></p>
+    <button id="enable" type="button">Włącz powiadomienia</button>
+
+    <h2>Testy</h2>
+    <button id="local" type="button">Powiadomienie ze strony</button>
+    <button id="sw" type="button">Powiadomienie z service workera</button>
+
+    <h2>Własne powiadomienie</h2>
+    <form id="notification-form">
+      <p>
+        <label for="title">Tytuł:</label>
+        <input id="title" required />
+      </p>
+
+      <p>
+        <label for="body">Treść:</label>
+        <textarea id="body"></textarea>
+      </p>
+
+      <p>
+        <label for="icon">Ikona:</label>
+        <select id="icon">
+          <option value="android.png">Android</option>
+          <option value="icons/apple-icon-180.png">Ikona Apple</option>
+          <option value="icons/manifest-icon-192.maskable.png">Ikona 192</option>
+          <option value="icons/manifest-icon-512.maskable.png">Ikona 512</option>
+        </select>
+      </p>
+
+      <button type="submit">Wyślij powiadomienie</button>
+    </form>
+
+    <h2>Web Push</h2>
+    <button id="subscribe" type="button">Subskrybuj powiadomienia push</button>
+    <button id="unsubscribe" type="button">Anuluj subskrypcję</button>
+    <p>
+      <textarea id="subscription" rows="8" cols="60" readonly></textarea>
+    </p>
+    <button id="copy" type="button">Kopiuj subskrypcję</button>
+  </body>
+</html>
