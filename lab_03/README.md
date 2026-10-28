@@ -1,36 +1,46 @@
-# Lab 03 – Aplikacja pogodowa PWA
+# Lab 03 - Aplikacja pogodowa PWA
 
-## Uruchomienie
-1. Wygeneruj projekt React/Vite poleceniem npm create vite@latest . -- --template react.
-2. Skopiuj pliki z tego pakietu do odpowiednich miejsc projektu.
-3. Zainstaluj zależności: npm install oraz npm install -D vite-plugin-pwa.
-4. Wygeneruj ikony: npx @vite-pwa/assets-generator --preset minimal-2023 public/favicon.svg.
-5. W pliku src/api/fetchWeather.js wpisz własny klucz OpenWeatherMap w API_KEY.
-6. Uruchom tryb pracy: npm run dev.
-7. Sprawdź PWA/offline: npm run build, następnie npm run preview.
-
-## Test offline
-W trybie preview najpierw wyszukaj miasto przy połączeniu z internetem. Następnie w DevTools → Network wybierz Offline i wyszukaj to samo miasto. Powinny pojawić się ostatnio zapisane dane. Miasto, którego wcześniej nie wyszukiwano, pokaże komunikat o braku połączenia.
+Aplikacja pokazuje aktualną pogodę dla wybranego miasta. Dane pobiera z serwisu OpenWeatherMap. Aplikacja PWA zapisuje pliki strony i wcześniej pobrane dane pogodowe, dzięki czemu może wyświetlić ostatnio sprawdzoną pogodę bez połączenia z internetem.
 
 ## Funkcje
-- wyszukiwanie pogody przez OpenWeatherMap,
-- walidacja błędów i stan ładowania,
-- temperatura, opis, ikona, ciśnienie, wilgotność, wiatr i czas pomiaru,
-- komunikat o braku sieci,
-- PWA z cache plików aplikacji oraz odpowiedzi API.
 
-# Lab 03 – Aplikacja pogodowa PWA
+- wyszukiwanie pogody według nazwy miasta,
+- wyświetlanie temperatury, opisu pogody i ikony,
+- wyświetlanie ciśnienia, wilgotności i danych o wietrze,
+- komunikaty o ładowaniu, błędach i braku internetu,
+- działanie offline z wykorzystaniem wcześniej zapisanych danych,
+- możliwość zainstalowania aplikacji PWA.
 
-Aplikacja pokazuje pogodę dla wybranego miasta i działa offline na podstawie wcześniej pobranych danych.
+## Adres aplikacji
 
-**Aplikacja:** https://lab3-852f8.web.app
+[Otwórz aplikację pogodową](https://lab3-852f8.web.app)
 
-## Komputer
+## Uruchomienie lokalne
 
-![Pogoda](pogoda.png)
-![Tryb offline](offline.png)
+W folderze `lab_03` uruchom:
 
-## Telefon
+```bash
+npm install
+npm run dev
+```
 
-![Pogoda](pogoda_tel.png)
-![Tryb offline](offline_tel.png)
+Aby sprawdzić wersję produkcyjną i działanie offline:
+
+```bash
+npm run build
+npm run preview
+```
+
+Otwórz adres podany przez Vite, zwykle `http://localhost:4173/`. Najpierw wyszukaj miasto przy włączonym internecie, a potem sprawdź to samo miasto offline.
+
+## Zrzuty ekranu - komputer
+
+![Pogoda na komputerze](pogoda.png)
+
+![Działanie offline na komputerze](offline.png)
+
+## Zrzuty ekranu - telefon
+
+![Pogoda na telefonie](pogoda_tel.png)
+
+![Działanie offline na telefonie](offline_tel.png)
